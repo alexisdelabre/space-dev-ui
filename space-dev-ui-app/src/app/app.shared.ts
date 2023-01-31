@@ -1,3 +1,16 @@
+// INTERFACES
+
+export interface LaunchSummary {
+    id: string;
+    name: string;
+    status: string
+    windowStart: Date
+    windowEnd: Date
+}
+
+
+
+
 // API GENERATED INTERFACES
 // FROM https://ll.thespacedevs.com/2.2.0/swagger/#/
 

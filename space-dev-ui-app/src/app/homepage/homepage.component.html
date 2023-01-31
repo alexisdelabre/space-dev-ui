@@ -1,1 +1,5 @@
-<p>homepage works!</p>
+<button (click)="onClick()">Load data</button>
+<ng-container *ngFor="let data of launchsData">
+    <app-card [data]="data"></app-card>
+</ng-container>
+
