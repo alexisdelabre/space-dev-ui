@@ -5,19 +5,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { HomepageService } from './homepage/homepage.service';
+import { AppService } from './app.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { CardComponent } from './card/card.component';
+import { DetailPageComponent } from './detail-page/detail-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
+    NavbarComponent,
+    ErrorPageComponent,
+    CardComponent,
+    DetailPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [HomepageService],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

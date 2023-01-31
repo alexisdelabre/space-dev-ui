@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HomepageService } from './homepage.service'
+import { AppService } from '../app.service'
 
 @Component({
   selector: 'app-homepage',
@@ -8,8 +8,17 @@ import { HomepageService } from './homepage.service'
 })
 export class HomepageComponent {
 
-  constructor(public homepageService: HomepageService) {  }
+  public launchsData: any;
+  
+  constructor(public appService: AppService) { 
+   }
 
   ngOnInit() {
-  this.homepageService.getConfig().subscribe((data: any) => {console.log(data)})}
+  this.launchsData = this.appService.getFiftyUpcomingLaunchs().subscribe((data: any) => {
+    console.log(data.results[0])
+  })}
+
+
+
+
 }
