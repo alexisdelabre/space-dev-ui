@@ -1,1 +1,33 @@
-<p>detail-page works!</p>
+<button (click)="goBack()">GO BACK</button>
+
+<mat-card *ngIf="data" class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ data.name }}</mat-card-title>
+    <mat-card-subtitle>
+      {{ data.status.abbrev }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <h2>Rocket details</h2>
+
+    <p>
+      Lenght & diameter: {{ data.rocket.configuration.length }}m /
+      {{ data.rocket.configuration.diameter }}m
+    </p>
+
+    <p>Max stages: {{ data.rocket.configuration.max_stage }}</p>
+
+    <h2>Launch details</h2>
+
+    <p>Plateform: {{ data.pad.name }}</p>
+
+    <p>Agency: {{ data.agency.name }}</p>
+
+    <p>
+      Window start: {{ data.window_start }}
+    </p>
+    <p>
+      Window end:{{ data.window_end }}
+    </p>
+  </mat-card-content>
+</mat-card>

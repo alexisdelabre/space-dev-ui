@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { LaunchSummary } from '../app.shared';
 
 @Component({
   selector: 'app-card',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CardComponent {
 
-  @Input() public data: any | undefined
+  @Input() public data: LaunchSummary | undefined
 
   constructor(
     public router: Router

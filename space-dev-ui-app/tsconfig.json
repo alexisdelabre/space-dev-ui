@@ -26,5 +26,6 @@
   },
   "angularCompilerOptions": {
     "strictPropertyInitialization": false,
+    "strictTemplates": true
   }
 }

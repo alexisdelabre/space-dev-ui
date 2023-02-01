@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppService } from '../app.service'
-import { LaunchSummary } from '../app.shared';
+import { LaunchSummary, Rocket } from '../app.shared';
 
 @Component({
   selector: 'app-homepage',
@@ -10,9 +10,9 @@ import { LaunchSummary } from '../app.shared';
 })
 export class HomepageComponent {
 
-  public launchsData: any[] | undefined
+  public launchsData: LaunchSummary[] | undefined
 
-  constructor(public appService: AppService, private route: ActivatedRoute) {
+  constructor(public appService: AppService, public route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -20,7 +20,6 @@ export class HomepageComponent {
 
   public onClick(){
     this.appService.getFiftyUpcomingLaunchs().subscribe((data: any) => {
-      console.log(data.results)
       this.launchsData = data.results
     }
     )
