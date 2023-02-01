@@ -5,23 +5,16 @@ import { LaunchSummary } from '../app.shared';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
+  @Input() public data: LaunchSummary | undefined;
 
-  @Input() public data: LaunchSummary | undefined
+  constructor(public router: Router) {}
 
-  constructor(
-    public router: Router
-
-  ) { }
-
-  ngOnInit(): void {
-    console.log(this.data)
-  }
+  ngOnInit(): void {}
 
   goToDetail(id: string): void {
     this.router.navigate([`detail/${id}`]);
   }
-
 }

@@ -7,6 +7,7 @@
       {{ data.status.abbrev }}
     </mat-card-subtitle>
   </mat-card-header>
+  <img mat-card-image src="{{ data.image }}" alt="" />
   <mat-card-content>
     <h2>Rocket details</h2>
 
@@ -21,13 +22,9 @@
 
     <p>Plateform: {{ data.pad.name }}</p>
 
-    <p>Agency: {{ data.agency.name }}</p>
+    <p>Agency: {{ data.launch_service_provider.name }}</p>
 
-    <p>
-      Window start: {{ data.window_start }}
-    </p>
-    <p>
-      Window end:{{ data.window_end }}
-    </p>
+    <p>Window start: {{ data.window_start }}</p>
+    <p>Window end:{{ data.window_end }}</p>
   </mat-card-content>
 </mat-card>

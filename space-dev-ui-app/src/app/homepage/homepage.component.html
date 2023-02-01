@@ -1,5 +1,8 @@
-<button (click)="onClick()">Load data</button>
-<ng-container *ngFor="let data of launchsData">
-    <app-card [data]="data"></app-card>
-</ng-container>
+<!-- mat button primary color -->
+<button mat-raised-button color="primary" (click)="loadData()">
+  Load data
+</button>
 
+<ng-container *ngFor="let data of allLaunchsData$ | async">
+  <app-card [data]="data"></app-card>
+</ng-container>

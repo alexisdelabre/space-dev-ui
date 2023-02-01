@@ -1,32 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AppService } from '../app.service'
-import { LaunchSummary, Rocket } from '../app.shared';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AppService } from '../app.service';
+import { AppState } from '../app.states';
+import { loadElements } from '../_states/homepage.actions';
+import { HomepageState } from '../_states/homepage.reducer';
+import { selectAllElements } from '../_states/homepage.selectors';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  styleUrls: ['./homepage.component.scss'],
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
+  constructor(
+    public appService: AppService,
+    public route: ActivatedRoute,
+    public store: Store<AppState>
+  ) {}
 
-  public launchsData: LaunchSummary[] | undefined
+  public allLaunchsData$ = this.store.select(selectAllElements);
+  public homepageState = '';
 
-  constructor(public appService: AppService, public route: ActivatedRoute) {
-  }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  public onClick(){
-    this.appService.getFiftyUpcomingLaunchs().subscribe((data: any) => {
-      this.launchsData = data.results
-    }
-    )
+  public loadData(): void {
+    this.store.dispatch(loadElements());
   }
 }
-
-
-
-
-

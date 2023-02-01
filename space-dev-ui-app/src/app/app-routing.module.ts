@@ -5,12 +5,12 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { HomepageComponent } from './homepage/homepage.component';
 
 export const routes: Routes = [
-  {path: '', component: HomepageComponent},
-  {path: 'detail/:id', component: DetailPageComponent},
-  {path: '**', component: ErrorPageComponent}
+  { path: '', component: HomepageComponent }, // home
+  { path: 'detail/:id', component: DetailPageComponent }, // detail
+  { path: '**', component: ErrorPageComponent }, // wildcard
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
