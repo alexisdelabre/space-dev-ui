@@ -3,6 +3,8 @@
   Load data
 </button>
 
-<ng-container *ngFor="let data of allLaunchsData$ | async">
-  <app-card [data]="data"></app-card>
-</ng-container>
+<div class="card-container">
+  <ng-container *ngFor="let data of allLaunchsData$ | async">
+    <app-card [data]="data"></app-card>
+  </ng-container>
+</div>
